@@ -80,61 +80,6 @@ class BasicBlock(nn.Module):
         return out
 
 
-# class BasicBlock_2(nn.Module):
-#     def __init__(self, in_channels,
-#                  out_channels, stride=1,
-#                  expansion=1,
-#                  downsample=None) -> None:
-#         super(BasicBlock_2, self).__init__()
-#         self.expansion = expansion
-#         self.downsample = downsample
-
-#         self.conv1 = nn.Conv2d(
-#             in_channels,
-#             out_channels,
-#             kernel_size=1,
-#             bias=False)
-#         self.bn1 = nn.BatchNorm2d(out_channels)
-#         self.conv2 = nn.Conv2d(
-#             out_channels,
-#             out_channels,
-#             kernel_size=3,
-#             stride=stride,
-#             padding=1,
-#             bias=False
-#         )
-#         self.bn2 = nn.BatchNorm2d(out_channels)
-#         self.conv3 = nn.Conv2d(
-#             out_channels,
-#             out_channels*expansion,
-#             kernel_size=1,
-#             bias=False
-#         )
-#         self.bn3 = nn.BatchNorm2d(out_channels*expansion)
-#         self.relu = nn.ReLU(inplace=True)
-
-#     def forward(self, x):
-#         indenity = x
-
-#         out = self.conv1(x)
-#         out = self.bn1(out)
-#         out = self.relu(out)
-
-#         out = self.conv2(out)
-#         out = self.bn2(out)
-#         out = self.relu(out)
-
-#         out = self.conv3(out)
-#         out = self.bn3(out)
-
-#         if self.downsample is not None:
-#             indenity = self.downsample(x)
-#         out += indenity
-
-#         out = self.relu(out)
-
-#         return out
-
 
 class Res_Net(nn.Module):
     def __init__(self,
